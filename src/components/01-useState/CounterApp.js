@@ -1,14 +1,6 @@
-# Getting Started with Create React App
+import React, { useState } from 'react';
+import './counter.css';
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Hooks Concepts
-
-### useState Hook
-
-useState Hook overwrittes the entire state defined in the hook. We must use spread operator to avoid this effect
-
-```javascript
 const CounterApp = () => {
   const [state, setState] = useState({
     counter1: 10,
@@ -34,4 +26,5 @@ const CounterApp = () => {
     </>
   );
 };
-```
+
+export default CounterApp;
