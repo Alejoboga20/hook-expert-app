@@ -2,9 +2,14 @@ import React, { useEffect } from 'react';
 
 const Message = () => {
   useEffect(() => {
-    console.log('Component mounted');
+    const mouseMove = (e) => {
+      console.log('here');
+    };
+
+    window.addEventListener('mousemove', mouseMove);
+
     return () => {
-      console.log('Component unmount');
+      window.removeEventListener('mousemove', mouseMove);
     };
   }, []);
 

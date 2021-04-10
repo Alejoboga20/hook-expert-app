@@ -94,7 +94,7 @@ export default SimpleForm;
 ```
 
 In the other hand, if the array of dependencies is blank, useEffect only run once. useEffect is used to listen to specific part of our app.
-Also can be used for mount and unmount components.
+Also can be used for mount and unmount components. If we add events with useEffect we need to remove them at the end.
 
 ```javascript
 useEffect(() => {}, []);
@@ -103,6 +103,18 @@ useEffect(() => {
   console.log('Component mounted');
   return () => {
     console.log('Component unmount');
+  };
+}, []);
+
+useEffect(() => {
+  const mouseMove = (e) => {
+    console.log('here');
+  };
+
+  window.addEventListener('mousemove', mouseMove);
+
+  return () => {
+    window.removeEventListener('mousemove', mouseMove);
   };
 }, []);
 ```
