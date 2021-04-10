@@ -94,7 +94,15 @@ export default SimpleForm;
 ```
 
 In the other hand, if the array of dependencies is blank, useEffect only run once. useEffect is used to listen to specific part of our app.
+Also can be used for mount and unmount components.
 
 ```javascript
 useEffect(() => {}, []);
+
+useEffect(() => {
+  console.log('Component mounted');
+  return () => {
+    console.log('Component unmount');
+  };
+}, []);
 ```
