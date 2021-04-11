@@ -118,3 +118,7 @@ useEffect(() => {
   };
 }, []);
 ```
+
+### useRef Hook
+
+useRef is used to keep a mutable reference. Its value can be changed without trigger a rendering.
