@@ -122,3 +122,42 @@ useEffect(() => {
 ### useRef Hook
 
 useRef is used to keep a mutable reference. Its value can be changed without trigger a rendering.
+The most important use case of useRef is to update the state of an unmounted component. (Can happen when we cancel a petition for a component during a load for example)
+We can set the status of a component to decide if we update the component or not. We can use useEffect to make that during the component unmount.
+
+```javascript
+import React, { useRef, useEffect, useState } from 'react';
+
+export const useFetch = (url) => {
+  const isMounted = useRef(true);
+
+  const [state, setState] = useState({
+    data: null,
+    loading: true,
+    error: null
+  });
+
+  useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    setState({ data: null, loading: true, error: null });
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        if (isMounted.current) {
+          setState({
+            loading: false,
+            error: null,
+            data
+          });
+        }
+      });
+  }, [url]);
+
+  return state;
+};
+```

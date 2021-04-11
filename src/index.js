@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 //import HookApp from './HookApp';
 //import CounterApp from './components/01-useState/CounterApp';
 //import CounterWithCustomHook from './components/01-useState/CounterWithCustomHook';
-import FocusScreen from './components/04-useRef/FocusScreen';
+import RealExampleRef from './components/04-useRef/RealExampleRef';
 
-ReactDOM.render(<FocusScreen />, document.getElementById('root'));
+ReactDOM.render(<RealExampleRef />, document.getElementById('root'));
