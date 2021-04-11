@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 //import HookApp from './HookApp';
 //import CounterApp from './components/01-useState/CounterApp';
 //import CounterWithCustomHook from './components/01-useState/CounterWithCustomHook';
-import LayoutEffect from './components/05-useLayoutEffect/LayoutEffect';
+import Memorize from './components/06-memos/Memorize';
 
-ReactDOM.render(<LayoutEffect />, document.getElementById('root'));
+ReactDOM.render(<Memorize />, document.getElementById('root'));
