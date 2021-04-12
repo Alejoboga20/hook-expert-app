@@ -15,14 +15,38 @@ const TodoApp = () => {
 
   return (
     <div>
-      <h1>Todo App</h1>
+      <h1>Todo App {todos.length}</h1>
       <hr />
 
-      <ol>
-        <li>Hello</li>
-        <li>Wolrd</li>
-        <li>Reducer</li>
-      </ol>
+      <div className='row'>
+        <div className='col-7'>
+          <ul className='list-group list-group-flush'>
+            {todos.map((todo, index) => (
+              <li key={todo.id} className='list-group-item'>
+                <p className='text-center'>
+                  {index + 1} {todo.description}
+                </p>
+                <button className='btn btn-danger'>Delete</button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className='col-5'>
+          <h4>Add Task</h4>
+          <hr />
+          <form className='form-control'>
+            <div>
+              <input
+                type='text'
+                name='description'
+                placeholder='Task'
+                autoComplete='off'
+              />
+            </div>
+            <button className='btn btn-outline-primary mt-1'>Add</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
