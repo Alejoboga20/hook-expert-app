@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 //import HookApp from './HookApp';
 //import CounterApp from './components/01-useState/CounterApp';
 //import CounterWithCustomHook from './components/01-useState/CounterWithCustomHook';
-import CallbackHook from './components/06-memos/CallbackHook';
+import { Padre } from './components/07-memorize/Padre';
 
-ReactDOM.render(<CallbackHook />, document.getElementById('root'));
+ReactDOM.render(<Padre />, document.getElementById('root'));
