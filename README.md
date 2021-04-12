@@ -161,3 +161,19 @@ export const useFetch = (url) => {
   return state;
 };
 ```
+
+### React Memo
+
+It's used to memorize components. The component is only rerender when its props have been changed.
+
+```javascript
+import React, { memo } from 'react';
+
+const Small = memo(({ value }) => {
+  console.log('here');
+
+  return <small>{value}</small>;
+});
+
+export default Small;
+```
