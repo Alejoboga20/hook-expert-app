@@ -11,7 +11,24 @@ const initialState = [
 ];
 
 const TodoApp = () => {
-  const [todos] = useReducer(todoReducer, initialState);
+  const [todos, dispatch] = useReducer(todoReducer, initialState);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newTodo = {
+      id: new Date().getTime(),
+      description: 'New Task',
+      done: false
+    };
+
+    const action = {
+      type: 'add',
+      payload: newTodo
+    };
+
+    dispatch(action);
+  };
 
   return (
     <div>
@@ -31,10 +48,12 @@ const TodoApp = () => {
             ))}
           </ul>
         </div>
+
         <div className='col-5'>
           <h4>Add Task</h4>
           <hr />
-          <form className='form-control'>
+
+          <form className='form-control' onSubmit={handleSubmit}>
             <div>
               <input
                 type='text'
@@ -43,7 +62,9 @@ const TodoApp = () => {
                 autoComplete='off'
               />
             </div>
-            <button className='btn btn-outline-primary mt-1'>Add</button>
+            <button className='btn btn-outline-primary mt-1' type='submit'>
+              Add
+            </button>
           </form>
         </div>
       </div>
