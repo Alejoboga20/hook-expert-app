@@ -27,7 +27,14 @@ export const useFetch = (url) => {
             data
           });
         }
-      });
+      })
+      .catch((e) =>
+        setState({
+          data: null,
+          loading: false,
+          error: 'Unable to load the info'
+        })
+      );
   }, [url]);
 
   return state;
