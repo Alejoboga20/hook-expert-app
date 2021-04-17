@@ -11,3 +11,13 @@ export const addAction = {
     done: false
   }
 };
+
+export const deleteAction = {
+  type: 'delete',
+  payload: 2
+};
+
+export const toggleAction = {
+  type: 'toggle',
+  payload: 1
+};
